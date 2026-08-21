@@ -1,11 +1,10 @@
-# 1. 보관함의 모든 파일과 폴더를 기본적으로 완전 차단 (비공개 보호)
+# Vault 전체를 기본적으로 제외
 /*
-.*
-.obsidian/
+/.*
 
-# 2. 오직 'Blog' 폴더와 그 안의 내용만 예외로 Git에 허용!
-!/01_Blog_Posts
+# 01_Blog_Posts 아래의 게시글, 이미지 및 하위 폴더 전체를 추적
+!/01_Blog_Posts/
 !/01_Blog_Posts/**
 
-# 3. .gitignore 파일 자체는 허용
-!.gitignore
+# .gitignore 자체는 추적
+!/.gitignore
