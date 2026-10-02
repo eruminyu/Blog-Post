@@ -14,6 +14,11 @@ there. Do not install node_modules under src/content/posts/tools: Markdown in
 dependencies could be collected as blog posts. This README is .txt for the same
 reason. Never publish tools/.preview output as content.
 
+Fuwari's ImageWrapper.astro must also exclude the tools directory from its
+broad image glob. Keep the existing image matches and add the negative pattern:
+  import.meta.glob(["../../**", "!../../content/posts/tools/**"], { import: "default" })
+Otherwise Vite can bundle helper scripts from the content repository as images.
+
 Before building:
   node RUNTIME_DIR/validate-portfolio.mjs POST_DIR
   pnpm exec astro sync --force
@@ -56,7 +61,8 @@ standard Markdown project sections.
 
 Server setup candidates and Korean instructions:
   C:/Project/Career/Blog_Server_설정
-These are prepared files; they have not been applied to the server.
+The server-specific Astro config, update script and ImageWrapper patch are
+maintained there separately from the content Git repository.
 
 Developer checks on Windows (optional):
   npm --prefix C:/Project/Blog-Post/tools ci --ignore-scripts
