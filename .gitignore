@@ -8,3 +8,9 @@
 
 # .gitignore 자체는 추적
 !/.gitignore
+
+# 서버 빌드용 Portfolio 변환 도구 (의존성·미리보기 제외)
+!/tools/
+!/tools/**
+/tools/node_modules/
+/tools/.preview/

@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-preparation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "node prepare-portfolio.mjs --vault C:/Obsidian",
+    "test": "node --test prepare-portfolio.test.mjs render-resume.test.mjs remark-portfolio.test.mjs validate-portfolio.test.mjs"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
+  }
+}
